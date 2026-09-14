@@ -262,11 +262,12 @@ a{ color:inherit; }
 /* ── Орнамент ──────────────────────────────────────────────── */
 
 .ornament{
-  background:var(--cream);
-  color:var(--lime-dim);
-  opacity:.55;
-  padding-block:26px;
-  padding-inline:var(--pad);
+  height:76px;
+  background-color:var(--cream);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='24' viewBox='0 0 40 24'%3E%3Cg fill='none' stroke='%236FA32C' stroke-width='1.4' stroke-linecap='round' opacity='.55'%3E%3Cpath d='M20 4c-5 0-8 3-8 7 0 3 2 5 5 5 2 0 4-1 4-3 0-1.6-1.2-2.6-2.6-2.6-1 0-1.8.5-1.8 1.4'/%3E%3Cpath d='M20 4c5 0 8 3 8 7 0 3-2 5-5 5-2 0-4-1-4-3 0-1.6 1.2-2.6 2.6-2.6 1 0 1.8.5 1.8 1.4'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='1.4' fill='%236FA32C' opacity='.55'/%3E%3C/svg%3E");
+  background-repeat:repeat-x;
+  background-position:center;
+  background-size:40px 24px;
 }
 
 /* ── Секции ────────────────────────────────────────────────── */
