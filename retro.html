@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>МЕРКЕ-ЕТ — вариант C</title>
+<meta name="description" content="Мясоперерабатывающий комплекс «МЕРКЕ-ЕТ»: собственные пастбища, полный цикл, премиальная тушёнка, HALAL, экспорт."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"/>
+<link rel="stylesheet" href="assets/css/retro.css"/>
+</head>
+<body>
+
+<header class="top">
+  <div class="top__in">
+    <nav class="nav nav--l">
+      <a href="#goods">Продукция</a>
+      <a href="#how">Производство</a>
+      <a href="#facts">Мощности</a>
+    </nav>
+    <a class="mark" href="#top">МЕРКЕ-ЕТ<i>с 1986</i></a>
+    <nav class="nav nav--r">
+      <a href="#world">Экспорт</a>
+      <a class="cta cta--sm" href="#call">Связаться</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Первый экран -->
+<section class="hero" id="top">
+  <img class="hero__ph" src="assets/img/hero-pasture.jpg" alt="Стадо на предгорьях Алатау"/>
+  <div class="hero__in">
+    <h1 class="punch">
+      <span>ОТ НАШЕЙ&nbsp;ЗЕМЛИ&nbsp;—</span>
+      <span>К ВАШЕМУ СТОЛУ</span>
+    </h1>
+    <a class="cta" href="#goods">Смотреть продукцию</a>
+  </div>
+  <div class="blob">
+    Собственные пастбища у подножия Алатау,
+    полный цикл производства и 40 лет опыта —
+    в каждой партии мяса.
+  </div>
+</section>
+
+<!-- Продукция -->
+<section class="goods" id="goods">
+  <h2 class="mid">ПОЗНАКОМИМСЯ?</h2>
+
+  <div class="row">
+    <button class="arr" type="button" aria-label="Предыдущий продукт" data-dir="-1">←</button>
+
+    <div class="row__track" id="track">
+      <article class="tile tile--tomato">
+        <div class="tile__ph"><img loading="lazy" src="assets/img/canned-jar.jpg" alt="Премиальная тушёнка в стеклянной банке"/></div>
+        <h3>Премиальная<br/>тушёнка</h3>
+        <p class="tile__kind">до 1 000 тонн в год</p>
+      </article>
+
+      <article class="tile tile--olive">
+        <div class="tile__ph"><img loading="lazy" src="assets/img/beef-cuts.jpg" alt="Отрубы говядины"/></div>
+        <h3>Говядина</h3>
+        <p class="tile__kind">четвертины · части туши · по спецификации</p>
+      </article>
+
+      <article class="tile tile--mustard">
+        <div class="tile__ph"><img loading="lazy" src="assets/img/sheep-pasture.jpg" alt="Отара на пастбище"/></div>
+        <h3>Баранина</h3>
+        <p class="tile__kind">туши · охлаждённая или замороженная</p>
+      </article>
+
+      <article class="tile tile--sky">
+        <div class="tile__ph"><img loading="lazy" src="assets/img/plant-interior.jpg" alt="Производственный цех"/></div>
+        <h3>Полуфабрикаты<br/>и колбасы</h3>
+        <p class="tile__kind">2 тонны в сутки</p>
+      </article>
+    </div>
+
+    <button class="arr" type="button" aria-label="Следующий продукт" data-dir="1">→</button>
+  </div>
+
+  <p class="note">
+    Формат поставки, ассортимент, вес и упаковка формируются под требования
+    конкретного рынка и заказчика. <a href="#call">Запросить спецификацию</a>
+  </p>
+</section>
+
+<!-- Как это делается -->
+<section class="how" id="how">
+  <div class="in">
+    <h2 class="serif">Как это делается</h2>
+    <p class="how__sub">Восемь этапов под одной крышей — от пастбища до отгрузки</p>
+
+    <div class="polas">
+      <figure class="pola pola--a">
+        <img loading="lazy" src="assets/img/cattle.jpg" alt="Скот на пастбище"/>
+        <figcaption>Собственные пастбища</figcaption>
+      </figure>
+      <figure class="pola pola--b">
+        <img loading="lazy" src="assets/img/plant-interior.jpg" alt="Цех переработки"/>
+        <figcaption>Убой и разделка</figcaption>
+      </figure>
+      <figure class="pola pola--c">
+        <img loading="lazy" src="assets/img/cold-storage.jpg" alt="Холодильная камера"/>
+        <figcaption>Охлаждение и хранение</figcaption>
+      </figure>
+      <figure class="pola pola--d">
+        <img loading="lazy" src="assets/img/shipping.jpg" alt="Отгрузка"/>
+        <figcaption>Упаковка и отгрузка</figcaption>
+      </figure>
+    </div>
+
+    <ol class="steps">
+      <li>Убой</li><li>Охлаждение</li><li>Разделка</li><li>Хранение</li>
+      <li>Переработка</li><li>Производство</li><li>Упаковка</li><li>Отгрузка</li>
+    </ol>
+  </div>
+</section>
+
+<!-- Мощности -->
+<section class="facts" id="facts">
+  <h2 class="mid">КОМПЛЕКС В ЦИФРАХ</h2>
+  <div class="badges">
+    <div class="badge badge--1"><b>49</b><span>га территория</span></div>
+    <div class="badge badge--2"><b>12</b><span>холодильных камер</span></div>
+    <div class="badge badge--3"><b>350</b><span>тонн хранения</span></div>
+    <div class="badge badge--4"><b>100</b><span>голов КРС/сутки</span></div>
+    <div class="badge badge--5"><b>1 000</b><span>голов МРС/сутки</span></div>
+    <div class="badge badge--6"><b>10</b><span>тонн переработки/сутки</span></div>
+  </div>
+  <figure class="strip"><img loading="lazy" src="assets/img/ridge-band.jpg" alt="Предгорья Алатау"/></figure>
+</section>
+
+<!-- Экспорт и halal -->
+<section class="world" id="world">
+  <div class="in world__grid">
+    <div>
+      <h2 class="serif serif--light">От Алатау — к мировым рынкам</h2>
+      <ul class="geo">
+        <li>ОАЭ</li><li>Оман</li><li>Катар</li><li>Кувейт</li>
+        <li>Саудовская Аравия</li><li>Узбекистан</li><li>Кыргызстан</li><li>Россия</li>
+      </ul>
+    </div>
+    <div class="seal">
+      <div class="seal__disc">HALAL</div>
+      <p>Сертифицированное производство для рынков, где соответствие требованиям Halal обязательно.</p>
+    </div>
+  </div>
+</section>
+
+<!-- История -->
+<section class="story">
+  <div class="in">
+    <h2 class="mid mid--left">40 ЛЕТ МЯСНОЙ ТРАДИЦИИ</h2>
+    <div class="road">
+      <article><b>1986</b><p>Предприятие основано. Начало мясной традиции комбината.</p></article>
+      <article><b>2007</b><p>Реконструкция: немецкое оборудование для колбасных изделий и консервов.</p></article>
+      <article><b>Сегодня</b><p>Традиции производства и современное оборудование для международного рынка.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- Контакты -->
+<section class="call" id="call">
+  <div class="in">
+    <h2 class="punch punch--sm"><span>ДАВАЙТЕ</span> <span>РАБОТАТЬ</span></h2>
+    <p class="call__sub">
+      Дистрибьюторам, оптовым компаниям, торговым сетям, импортёрам
+      и экспортным операторам — обсудим объёмы и формат поставки.
+    </p>
+    <div class="call__grid">
+      <div>
+        <span class="lbl">Телефоны</span>
+        <a href="tel:+77775477738">+7 777 547 77 38</a>
+        <a href="tel:+77025992667">+7 702 599 26 67</a>
+      </div>
+      <div>
+        <span class="lbl">Адрес</span>
+        <p>РК, Жамбылская область,<br/>Меркенский район, село Т. Рыскулова, б/н</p>
+      </div>
+      <div>
+        <span class="lbl">Мессенджер</span>
+        <a class="cta cta--dark" href="https://wa.me/77025992667">Написать в WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="end">
+  <div class="in end__in">
+    <span>ТОО «Мерке-ет комбинаты»</span>
+    <span>натуральность · качество · доверие</span>
+    <span class="end__links"><a href="index.html">Вариант A</a> · <a href="dark.html">Вариант B</a></span>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('img').forEach(function (img) {
+  img.addEventListener('error', function () { img.classList.add('is-missing'); });
+  if (img.complete && img.naturalWidth === 0) { img.classList.add('is-missing'); }
+});
+
+// Стрелки прокручивают ряд продукции на одну плитку
+var track = document.getElementById('track');
+document.querySelectorAll('.arr').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var tile = track.querySelector('.tile');
+    var step = tile ? tile.getBoundingClientRect().width + 24 : 320;
+    track.scrollBy({ left: step * Number(btn.dataset.dir), behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
