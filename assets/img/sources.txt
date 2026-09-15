@@ -1,0 +1,11 @@
+# файл|URL исходного кадра Higgsfield
+hero-pasture.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132317_f588f961-cb24-44f6-ae9f-ae5234efc0e4.png
+plant-interior.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132317_48ba9163-6c50-4e3c-a9af-78f4c11e7d32.png
+beef-cuts.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132317_df29a91f-5daa-462c-87e1-4c21ff458bb3.png
+sheep-pasture.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132316_9ed3e577-8260-4b05-a002-dfe26916b17e.png
+aerial-complex.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132316_bfd02e33-b0f7-413d-a80e-1cb69342764c.png
+canned-jar.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012248_748d4996-2e81-47ed-ace8-91925933ea40.png
+cold-storage.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012247_ea2a856b-7acb-4057-b97f-8ee7d2f77b8e.png
+shipping.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012247_fd0e0558-2b5f-4620-9ba0-3b8135467abc.png
+cattle.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012247_166c8569-449a-4702-9c01-9cc2a88f5446.png
+ridge-band.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012247_eac62f2f-cb95-400a-b49b-324b65230236.png

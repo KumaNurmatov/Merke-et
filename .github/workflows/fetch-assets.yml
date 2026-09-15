@@ -1,0 +1,52 @@
+name: Скачать изображения в репозиторий
+
+# Кадры генерируются во внешнем сервисе. Раннер скачивает их, сжимает в JPEG
+# и коммитит в assets/img/, чтобы сайт не зависел от чужого CDN.
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/fetch-assets.yml'
+      - 'assets/img/sources.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Скачать исходные кадры
+        run: |
+          set -euo pipefail
+          while IFS='|' read -r name url; do
+            case "$name" in ''|'#'*) continue;; esac
+            echo "→ $name"
+            curl -fsSL "$url" -o "assets/img/$name"
+          done < assets/img/sources.txt
+
+      - name: Сжать в JPEG
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y imagemagick >/dev/null
+          cd assets/img
+          for f in *.png; do
+            convert "$f" -resize '2200x2200>' -strip -interlace Plane -quality 82 "${f%.png}.jpg"
+            rm "$f"
+          done
+          ls -la
+
+      - name: Закоммитить
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/img
+          git diff --cached --quiet && { echo "нет изменений"; exit 0; }
+          git commit -m "Добавить изображения сайта в репозиторий"
+          git push
