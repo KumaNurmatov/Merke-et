@@ -14,14 +14,17 @@
 
 <header class="top">
   <div class="top__in">
-    <nav class="nav nav--l">
+    <nav class="nav nav--l" id="nav-c">
       <a href="#goods">Продукция</a>
       <a href="#how">Производство</a>
       <a href="#facts">Мощности</a>
+      <a href="#world">Экспорт</a>
     </nav>
     <a class="mark" href="#top">МЕРКЕ-ЕТ<i>с 1986</i></a>
     <nav class="nav nav--r">
-      <a href="#world">Экспорт</a>
+      <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav-c">
+      <span></span><span></span><span></span>
+    </button>
       <a class="cta cta--sm" href="#call">Связаться</a>
     </nav>
   </div>
@@ -208,6 +211,24 @@ document.querySelectorAll('.arr').forEach(function (btn) {
     var tile = track.querySelector('.tile');
     var step = tile ? tile.getBoundingClientRect().width + 24 : 320;
     track.scrollBy({ left: step * Number(btn.dataset.dir), behavior: 'smooth' });
+  });
+});
+
+// Мобильное меню
+document.querySelectorAll('.burger').forEach(function (btn) {
+  var panel = document.getElementById(btn.getAttribute('aria-controls'));
+  if (!panel) { return; }
+  btn.addEventListener('click', function () {
+    var open = panel.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', String(open));
+    btn.classList.toggle('is-active', open);
+  });
+  panel.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      panel.classList.remove('is-open');
+      btn.classList.remove('is-active');
+      btn.setAttribute('aria-expanded', 'false');
+    });
   });
 });
 </script>

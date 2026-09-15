@@ -15,12 +15,15 @@
 <header class="bar">
   <div class="bar__in">
     <a class="logo" href="#top">МЕРКЕ-ЕТ<span>с 1986</span></a>
-    <nav class="menu">
+    <nav class="menu" id="nav-b">
       <a href="#supply">Поставка</a>
       <a href="#stew">Тушёнка</a>
       <a href="#power">Мощности</a>
       <a href="#world">Экспорт</a>
     </nav>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav-b">
+      <span></span><span></span><span></span>
+    </button>
     <a class="pill" href="#talk">Запрос</a>
   </div>
 </header>
@@ -62,7 +65,6 @@
 
     <div class="spec">
       <table>
-        <caption>Формат, вес и упаковка формируются под требования рынка заказчика</caption>
         <thead>
           <tr><th>Продукт</th><th>Формат</th><th>Состояние</th><th>Упаковка</th></tr>
         </thead>
@@ -74,6 +76,7 @@
         </tbody>
       </table>
     </div>
+    <p class="spec__note">Формат, вес и упаковка формируются под требования рынка заказчика</p>
 
     <div class="duo">
       <figure class="fig"><img loading="lazy" src="assets/img/cattle.jpg" alt="Скот на пастбище"/><figcaption>Собственные пастбища — контроль происхождения с первого этапа</figcaption></figure>
@@ -199,6 +202,24 @@
 document.querySelectorAll('img').forEach(function (img) {
   img.addEventListener('error', function () { img.classList.add('is-missing'); });
   if (img.complete && img.naturalWidth === 0) { img.classList.add('is-missing'); }
+});
+
+// Мобильное меню
+document.querySelectorAll('.burger').forEach(function (btn) {
+  var panel = document.getElementById(btn.getAttribute('aria-controls'));
+  if (!panel) { return; }
+  btn.addEventListener('click', function () {
+    var open = panel.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', String(open));
+    btn.classList.toggle('is-active', open);
+  });
+  panel.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      panel.classList.remove('is-open');
+      btn.classList.remove('is-active');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
 });
 </script>
 

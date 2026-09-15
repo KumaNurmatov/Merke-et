@@ -16,13 +16,16 @@
 
   <header class="nav">
     <a class="brand" href="#top">МЕРКЕ-ЕТ<span>с 1986</span></a>
-    <nav class="pillnav">
+    <nav class="pillnav" id="nav-d">
       <a href="#about">О комбинате</a>
       <a href="#catalog">Каталог</a>
       <a href="#cycle">Производство</a>
       <a href="#export">Экспорт</a>
       <a href="#contact">Контакты</a>
     </nav>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav-d">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
   <!-- Первый экран -->
@@ -204,6 +207,24 @@
 document.querySelectorAll('img').forEach(function (img) {
   img.addEventListener('error', function () { img.classList.add('is-missing'); });
   if (img.complete && img.naturalWidth === 0) { img.classList.add('is-missing'); }
+});
+
+// Мобильное меню
+document.querySelectorAll('.burger').forEach(function (btn) {
+  var panel = document.getElementById(btn.getAttribute('aria-controls'));
+  if (!panel) { return; }
+  btn.addEventListener('click', function () {
+    var open = panel.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', String(open));
+    btn.classList.toggle('is-active', open);
+  });
+  panel.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      panel.classList.remove('is-open');
+      btn.classList.remove('is-active');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
 });
 </script>
 

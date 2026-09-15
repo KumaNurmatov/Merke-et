@@ -129,6 +129,7 @@ a{ color:inherit; }
   border-bottom:2px solid var(--ink);
 }
 .top__in{
+  position:relative;
   max-width:var(--wrap);
   margin-inline:auto;
   padding:12px var(--pad);
@@ -162,6 +163,30 @@ a{ color:inherit; }
   color:var(--ink);
 }
 .nav a:not(.cta):hover{ color:var(--tomato); }
+
+/* Бургер и мобильное меню */
+.burger{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  width:42px;
+  height:42px;
+  padding:0 10px;
+  background:var(--cream);
+  border:2px solid var(--ink);
+  border-radius:4px;
+  cursor:pointer;
+}
+.burger span{
+  display:block;
+  height:2px;
+  background:var(--ink);
+  transition:transform .2s ease, opacity .2s ease;
+}
+.burger.is-active span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.burger.is-active span:nth-child(2){ opacity:0; }
+.burger.is-active span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
 /* ── Первый экран ──────────────────────────────────────────── */
 
@@ -490,8 +515,24 @@ a{ color:inherit; }
 }
 
 @media (max-width:900px){
-  .nav--l{ display:none; }
-  .nav--r{ flex:1; }
+  .burger{ display:flex; }
+  .nav--l{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    flex-direction:column;
+    gap:0;
+    padding:6px var(--pad) 16px;
+    background:var(--cream);
+    border-bottom:2px solid var(--ink);
+    z-index:60;
+  }
+  .nav--l.is-open{ display:flex; }
+  .nav--l a{ padding:13px 0; font-size:16px; border-bottom:1px solid rgba(33,38,15,.14); }
+  .nav--l a:last-child{ border-bottom:0; }
+  .nav--r{ flex:0 0 auto; gap:10px; }
   .mark{ margin-right:auto; }
   .world__grid{ grid-template-columns:1fr; }
   .road{ grid-template-columns:1fr; }
@@ -511,6 +552,18 @@ a{ color:inherit; }
 
 @media (max-width:640px){
   body{ font-size:16px; }
+  .mark i{ display:none; }
+  .cta--sm{ padding:0 12px; }
+  .row__track{ grid-auto-columns:78vw; }
+  .top__in{ gap:12px; }
+  .cta--sm{ padding:0 11px; font-size:10px; }
+  .punch{ font-size:clamp(24px, 7.2vw, 82px); }
+  .punch--sm{ font-size:clamp(23px, 6.6vw, 62px); }
+  .mid{ font-size:clamp(22px, 6.4vw, 54px); }
+  .serif{ font-size:clamp(23px, 6.4vw, 46px); }
+  .blob{ font-size:14px; padding:22px 20px; }
+  .tile__ph img{ height:210px; }
+  .steps li{ font-size:13px; padding:9px 14px; }
   .badges{ grid-template-columns:repeat(2, 1fr); }
   .polas{ grid-template-columns:1fr; }
   .pola{ transform:none; }

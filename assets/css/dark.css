@@ -133,6 +133,7 @@ a{ color:inherit; }
   border-bottom:1px solid var(--hair);
 }
 .bar__in{
+  position:relative;
   max-width:var(--wrap);
   margin-inline:auto;
   padding:14px var(--pad);
@@ -175,6 +176,30 @@ a{ color:inherit; }
   color:#fff;
   background:var(--red);
 }
+
+/* Бургер и мобильное меню */
+.burger{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  width:42px;
+  height:42px;
+  padding:0 10px;
+  margin-left:auto;
+  background:transparent;
+  border:1px solid var(--hair);
+  cursor:pointer;
+}
+.burger span{
+  display:block;
+  height:2px;
+  background:var(--bone);
+  transition:transform .2s ease, opacity .2s ease;
+}
+.burger.is-active span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.burger.is-active span:nth-child(2){ opacity:0; }
+.burger.is-active span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
 /* ── Первый экран ──────────────────────────────────────────── */
 
@@ -246,19 +271,18 @@ a{ color:inherit; }
 .head{ margin-bottom:clamp(36px, 5vw, 64px); }
 
 /* Таблица спецификации */
-.spec{ overflow-x:auto; }
+.spec{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
 .spec table{
   width:100%;
   min-width:680px;
   border-collapse:collapse;
   text-align:left;
 }
-.spec caption{
-  caption-side:bottom;
-  padding-top:16px;
+.spec__note{
+  margin:16px 0 0;
+  max-width:60ch;
   font-size:13.5px;
   color:var(--ash);
-  text-align:left;
 }
 .spec th{
   padding:14px 18px 14px 0;
@@ -488,7 +512,23 @@ a{ color:inherit; }
 /* ── Адаптив ───────────────────────────────────────────────── */
 
 @media (max-width:980px){
-  .menu{ display:none; }
+  .burger{ display:flex; }
+  .menu{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    flex-direction:column;
+    gap:0;
+    padding:6px var(--pad) 16px;
+    background:var(--void);
+    border-bottom:1px solid var(--hair);
+    z-index:60;
+  }
+  .menu.is-open{ display:flex; }
+  .menu a{ padding:13px 0; font-size:16px; border-bottom:1px solid var(--hair); }
+  .menu a:last-child{ border-bottom:0; }
   .nums{ grid-template-columns:repeat(2, 1fr); }
   .stew__grid{ grid-template-columns:1fr; }
   .years{ grid-template-columns:1fr; }
@@ -498,6 +538,18 @@ a{ color:inherit; }
 
 @media (max-width:640px){
   body{ font-size:16px; }
+  .logo span{ display:none; }
+  .bar__in{ gap:12px; }
+  .pill{ padding:0 12px; font-size:10px; }
+  .mega{ font-size:clamp(25px, 8.2vw, 104px); }
+  .mega--sm{ font-size:clamp(25px, 8vw, 96px); }
+  .big{ font-size:clamp(24px, 6.8vw, 68px); }
+  .huge{ font-size:clamp(30px, 8.6vw, 76px); }
+  .open__sub{ font-size:16.5px; }
+  .rail li{ flex:1 1 100%; }
+  .stew__shot img{ aspect-ratio:4/3; }
+  .ticker__row{ font-size:11.5px; gap:18px; }
+  .spec table{ min-width:560px; }
   .duo{ grid-template-columns:1fr; }
   .nums{ grid-template-columns:1fr; }
   .talk__grid{ grid-template-columns:1fr; }
