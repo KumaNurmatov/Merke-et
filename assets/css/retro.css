@@ -289,6 +289,9 @@ a{ color:inherit; }
   background:var(--cream2);
 }
 .tile__ph img{ width:100%; height:190px; object-fit:cover; }
+/* Банки снимались с разной дистанции — показываем целиком на общем кремовом поле */
+.tile__ph--jar{ background:var(--cream); }
+.tile__ph--jar img{ height:215px; object-fit:contain; }
 .tile h3{
   margin:0;
   font-size:22px;
@@ -307,6 +310,39 @@ a{ color:inherit; }
   color:var(--ink-soft);
 }
 .note a{ color:var(--tomato); font-weight:700; }
+
+/* Оптовые позиции под линейкой банок */
+.pair{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-top:clamp(32px, 4vw, 52px);
+}
+.pair__item{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  background:var(--cream2);
+  border:2px solid var(--ink);
+  border-radius:6px;
+  box-shadow:5px 5px 0 var(--ink);
+  padding:18px;
+}
+.pair__item img{
+  width:120px;
+  height:120px;
+  flex:0 0 auto;
+  object-fit:cover;
+  border:2px solid var(--ink);
+  border-radius:4px;
+}
+.pair__item h3{
+  margin:0 0 6px;
+  font-size:19px;
+  font-weight:900;
+  letter-spacing:-.02em;
+}
+.pair__item p{ margin:0; font-size:14px; color:var(--ink-soft); }
 
 /* ── Как это делается ──────────────────────────────────────── */
 
@@ -512,6 +548,7 @@ a{ color:inherit; }
 @media (max-width:1040px){
   .badges{ grid-template-columns:repeat(3, 1fr); }
   .polas{ grid-template-columns:repeat(2, 1fr); }
+  .pair{ grid-template-columns:1fr; }
 }
 
 @media (max-width:900px){
@@ -567,6 +604,9 @@ a{ color:inherit; }
   .badges{ grid-template-columns:repeat(2, 1fr); }
   .polas{ grid-template-columns:1fr; }
   .pola{ transform:none; }
+  .pair{ grid-template-columns:1fr; }
+  .pair__item{ flex-direction:column; align-items:flex-start; }
+  .pair__item img{ width:100%; height:180px; }
   .call__grid{ grid-template-columns:1fr; }
   .row{ gap:8px; }
   .arr{ width:40px; height:40px; }
