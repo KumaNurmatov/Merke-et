@@ -318,5 +318,14 @@
   </div>
 </footer>
 
+<script>
+// Если кадр не загрузился (нет сети, блокировка хоста) — прячем его,
+// под ним остаётся фирменный зелёный градиент, а не «битая» иконка.
+document.querySelectorAll('img').forEach(function (img) {
+  img.addEventListener('error', function () { img.classList.add('is-missing'); });
+  if (img.complete && img.naturalWidth === 0) { img.classList.add('is-missing'); }
+});
+</script>
+
 </body>
 </html>

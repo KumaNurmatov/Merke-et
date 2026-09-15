@@ -356,6 +356,17 @@ a{ color:inherit; }
 .card__media,
 .shot{ background:linear-gradient(150deg, var(--green) 0%, var(--ink-deep) 100%); }
 
+/* Изображение, которое не загрузилось, убирается — остаётся фирменный фон */
+img.is-missing{ display:none; }
+.hero:has(.hero__bg.is-missing) .hero__veil,
+.place:has(.place__bg.is-missing) .place__veil{
+  background:
+    radial-gradient(120% 90% at 80% 0%, rgba(26,70,51,.9) 0%, rgba(8,25,15,1) 62%),
+    linear-gradient(180deg, rgba(8,25,15,.6) 0%, rgba(8,25,15,1) 100%);
+}
+.card__media:has(img.is-missing),
+.shot:has(img.is-missing){ min-height:230px; }
+
 .shot{ margin:44px 0 0; }
 .shot img{
   width:100%;
