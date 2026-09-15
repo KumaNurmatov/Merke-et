@@ -3,6 +3,7 @@ name: Публикация сайта на GitHub Pages
 on:
   push:
     branches:
+      - main
       - claude/serene-cerf-54bpfr
   workflow_dispatch:
 
