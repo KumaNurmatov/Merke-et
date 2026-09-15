@@ -9,3 +9,7 @@ cold-storage.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHY
 shipping.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012247_fd0e0558-2b5f-4620-9ba0-3b8135467abc.png
 cattle.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012247_166c8569-449a-4702-9c01-9cc2a88f5446.png
 ridge-band.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012247_eac62f2f-cb95-400a-b49b-324b65230236.png
+jar-beef.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_54f499cf-f784-4fe8-a913-f7035b0cb117.png
+jar-lamb.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_99064fc2-f338-4836-b8b4-ed86e9db5b44.png
+jar-veg.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_7dd5b9ed-a344-41f9-a54d-8ed1be37e027.png
+jar-classic.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_5b4cc937-fa5c-453e-b8a4-90aa50284d72.png
