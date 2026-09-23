@@ -378,6 +378,71 @@ h4{
 .band__halal{ margin:0; font-size:15px; color:rgba(247,243,232,.82); }
 .band__halal b{ color:var(--lime); font-weight:800; letter-spacing:.12em; }
 
+/* ── Сертификаты ───────────────────────────────────────────── */
+
+.certs{ padding-block:clamp(48px, 6vw, 86px); }
+.certs__lead{ max-width:62ch; margin:0 0 clamp(28px, 4vw, 44px); color:var(--soft); }
+
+.certs__grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:22px;
+}
+.cert{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  background:#fff;
+  border:1px solid var(--hair);
+  border-radius:var(--r);
+  padding:26px 24px 24px;
+}
+.cert__std{
+  align-self:flex-start;
+  padding:7px 14px;
+  border-radius:30px;
+  background:var(--green);
+  color:var(--paper);
+  font-size:12.5px;
+  font-weight:800;
+  letter-spacing:.06em;
+}
+.cert h3{ margin:0; font-size:18px; }
+
+.cert__meta{ margin:0; display:grid; gap:10px; }
+.cert__meta > div{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:14px;
+  padding-bottom:10px;
+  border-bottom:1px solid var(--hair);
+}
+.cert__meta > div:last-child{ border-bottom:0; padding-bottom:0; }
+.cert__meta dt{ font-size:13.5px; color:var(--soft); flex:0 0 auto; }
+.cert__meta dd{
+  margin:0;
+  font-size:14px;
+  font-weight:600;
+  text-align:right;
+  font-variant-numeric:tabular-nums;
+}
+
+.cert__link{
+  margin-top:auto;
+  align-self:flex-start;
+  font-size:14px;
+  font-weight:700;
+  color:var(--green);
+  text-decoration:none;
+  border-bottom:1.5px solid rgba(46,107,65,.35);
+  padding-bottom:2px;
+}
+.cert__link:hover{ border-bottom-color:var(--green); }
+
+.cert--halal .cert__std{ background:var(--lime); color:var(--ink); letter-spacing:.14em; }
+.cert__text{ margin:0; font-size:14.5px; color:var(--soft); }
+
 /* ── История ───────────────────────────────────────────────── */
 
 .years{ padding-block:clamp(48px, 6vw, 86px); text-align:center; }
@@ -445,6 +510,7 @@ h4{
 @media (max-width:1040px){
   .grid{ grid-template-columns:repeat(2, 1fr); }
   .stats{ grid-template-columns:repeat(3, 1fr); }
+  .certs__grid{ grid-template-columns:repeat(2, 1fr); }
   .end{ grid-template-columns:1fr 1fr; }
 }
 
@@ -469,6 +535,7 @@ h4{
   .promo__txt{ padding:clamp(24px, 4vw, 40px); }
   .promo > img{ min-height:240px; max-height:320px; }
   .years__grid{ grid-template-columns:1fr; }
+  .certs__grid{ grid-template-columns:1fr; }
 }
 
 @media (max-width:620px){
