@@ -121,6 +121,30 @@ h4{
   padding:6px 8px 22px;
 }
 
+/* Переключатель языка */
+.langs{
+  display:flex;
+  align-items:center;
+  gap:2px;
+  margin-left:12px;
+  padding:4px;
+  background:var(--paper2);
+  border-radius:30px;
+  flex:0 0 auto;
+}
+.langs a,
+.langs__on{
+  padding:6px 11px;
+  border-radius:30px;
+  font-size:12.5px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-decoration:none;
+  color:var(--soft);
+}
+.langs a:hover{ background:var(--paper); color:var(--ink); }
+.langs__on{ background:var(--green); color:var(--paper); }
+
 /* Бургер и мобильное меню */
 .burger{
   display:none;
@@ -130,7 +154,7 @@ h4{
   width:44px;
   height:44px;
   padding:0 11px;
-  margin-left:auto;
+  margin-left:10px;
   background:var(--paper2);
   border:0;
   border-radius:50%;
@@ -172,6 +196,7 @@ h4{
 }
 .pillnav a{
   padding:9px 16px;
+  white-space:nowrap;
   border-radius:40px;
   font-size:13.5px;
   font-weight:600;
@@ -428,20 +453,89 @@ h4{
   font-variant-numeric:tabular-nums;
 }
 
-.cert__link{
-  margin-top:auto;
-  align-self:flex-start;
-  font-size:14px;
-  font-weight:700;
-  color:var(--green);
-  text-decoration:none;
-  border-bottom:1.5px solid rgba(46,107,65,.35);
-  padding-bottom:2px;
-}
-.cert__link:hover{ border-bottom-color:var(--green); }
+.cert__std--halal{ background:var(--lime); color:var(--ink); letter-spacing:.14em; }
 
-.cert--halal .cert__std{ background:var(--lime); color:var(--ink); letter-spacing:.14em; }
-.cert__text{ margin:0; font-size:14.5px; color:var(--soft); }
+/* Превью сертификата — кнопка, открывающая просмотрщик */
+.cert__view{
+  position:relative;
+  display:block;
+  width:100%;
+  padding:0;
+  border:1px solid var(--hair);
+  border-radius:14px;
+  overflow:hidden;
+  background:var(--paper2);
+  cursor:zoom-in;
+}
+.cert__view img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  object-position:top center;
+  -webkit-user-drag:none;
+  user-select:none;
+  pointer-events:none;
+}
+.cert__zoom{
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  padding:7px 14px;
+  border-radius:30px;
+  background:rgba(27,42,32,.82);
+  color:var(--paper);
+  font-size:12.5px;
+  font-weight:700;
+}
+.cert__view:hover .cert__zoom{ background:var(--green); }
+
+/* Просмотрщик */
+.viewer[hidden]{ display:none; }
+.viewer{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:clamp(12px, 3vw, 40px);
+  background:rgba(12,24,16,.88);
+  overflow:auto;
+}
+.viewer__frame{
+  margin:0;
+  max-width:min(860px, 100%);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.viewer__frame img{
+  width:100%;
+  height:auto;
+  border-radius:10px;
+  -webkit-user-drag:none;
+  user-select:none;
+}
+.viewer__frame figcaption{
+  color:rgba(247,243,232,.82);
+  font-size:14px;
+  text-align:center;
+}
+.viewer__close{
+  position:fixed;
+  top:clamp(10px, 2vw, 24px);
+  right:clamp(10px, 2vw, 24px);
+  width:46px;
+  height:46px;
+  border:0;
+  border-radius:50%;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:26px;
+  line-height:1;
+  cursor:pointer;
+}
+.viewer__close:hover{ background:#fff; }
 
 /* ── История ───────────────────────────────────────────────── */
 
@@ -516,6 +610,7 @@ h4{
 
 @media (max-width:860px){
   .burger{ display:flex; }
+  .langs{ margin-left:auto; }
   .pillnav{
     display:none;
     position:absolute;

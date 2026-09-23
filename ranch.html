@@ -15,7 +15,7 @@
 <div class="sheet">
 
   <header class="nav">
-    <a class="brand" href="#top">МЕРКЕ-ЕТ<span>с 1986</span></a>
+    <a class="brand" href="#top">МЕРКЕ-ЕТ<span>мясоперерабатывающий комплекс</span></a>
     <nav class="pillnav" id="nav-d">
       <a href="#about">О комбинате</a>
       <a href="#catalog">Каталог</a>
@@ -24,6 +24,11 @@
       <a href="#certs">Сертификаты</a>
       <a href="#contact">Контакты</a>
     </nav>
+    <div class="langs" aria-label="Язык сайта">
+      <span class="langs__on">RU</span>
+      <a href="ranch-en.html">EN</a>
+      <a href="ranch-kk.html">KK</a>
+    </div>
     <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav-d">
       <span></span><span></span><span></span>
     </button>
@@ -170,24 +175,30 @@
     <h2>Сертификаты</h2>
     <p class="certs__lead">
       Системы менеджмента качества и безопасности пищевой продукции подтверждены
-      независимыми органами сертификации. Область действия — убой, переработка,
-      консервирование и экспорт мяса.
+      независимыми органами сертификации. Нажмите на сертификат, чтобы рассмотреть его.
     </p>
 
     <div class="certs__grid">
       <article class="cert">
+        <button class="cert__view" type="button" data-cert="assets/img/certs/iso-9001.jpg" data-title="ISO 9001:2015 — система менеджмента качества">
+          <img src="assets/img/certs/iso-9001.jpg" alt="Сертификат ISO 9001:2015" loading="lazy" draggable="false"/>
+          <span class="cert__zoom">Рассмотреть</span>
+        </button>
         <span class="cert__std">ISO 9001:2015</span>
         <h3>Система менеджмента качества</h3>
         <dl class="cert__meta">
           <div><dt>Номер</dt><dd>50318782</dd></div>
           <div><dt>Орган</dt><dd>Veritas System Quality Certificates</dd></div>
-          <div><dt>Выдан</dt><dd>16.01.2025</dd></div>
+          <div><dt>Область</dt><dd>убой, переработка, консервирование, экспорт</dd></div>
           <div><dt>Действует до</dt><dd>15.01.2028</dd></div>
         </dl>
-        <a class="cert__link" href="assets/docs/iso-9001.pdf" target="_blank" rel="noopener">Открыть сертификат (PDF)</a>
       </article>
 
       <article class="cert">
+        <button class="cert__view" type="button" data-cert="assets/img/certs/iso-22000.jpg" data-title="ISO 22000:2018 — безопасность пищевой продукции">
+          <img src="assets/img/certs/iso-22000.jpg" alt="Сертификат ISO 22000:2018" loading="lazy" draggable="false"/>
+          <span class="cert__zoom">Рассмотреть</span>
+        </button>
         <span class="cert__std">ISO 22000:2018</span>
         <h3>Безопасность пищевой продукции</h3>
         <dl class="cert__meta">
@@ -196,16 +207,22 @@
           <div><dt>Аккредитация</dt><dd>ASIB (Europe) Limited</dd></div>
           <div><dt>Действует до</dt><dd>15.01.2028</dd></div>
         </dl>
-        <a class="cert__link" href="assets/docs/iso-22000.pdf" target="_blank" rel="noopener">Открыть сертификат (PDF)</a>
       </article>
 
-      <article class="cert cert--halal">
-        <span class="cert__std">HALAL</span>
-        <h3>Сертифицированное производство</h3>
-        <p class="cert__text">
-          Соответствие требованиям Halal — обязательное условие поставок на рынки
-          Персидского залива и Ближнего Востока.
-        </p>
+      <article class="cert">
+        <button class="cert__view" type="button" data-cert="assets/img/certs/halal.jpg" data-title="Халяль-сертификат ME-06-12-03KZ">
+          <img src="assets/img/certs/halal.jpg" alt="Халяль-сертификат" loading="lazy" draggable="false"/>
+          <span class="cert__zoom">Рассмотреть</span>
+        </button>
+        <span class="cert__std cert__std--halal">HALAL</span>
+        <h3>Халяль-сертификат</h3>
+        <dl class="cert__meta">
+          <div><dt>Номер</dt><dd>ME-06-12-03KZ</dd></div>
+          <div><dt>Орган</dt><dd>World Halal Trust</dd></div>
+          <div><dt>Стандарт</dt><dd>GSO 2055-1:2015</dd></div>
+          <div><dt>Область</dt><dd>баранина и субпродукты, охлаждённые и замороженные</dd></div>
+          <div><dt>Действует до</dt><dd>11.06.2026</dd></div>
+        </dl>
       </article>
     </div>
   </section>
@@ -243,6 +260,14 @@
     </div>
   </footer>
 
+  <div class="viewer" id="viewer" hidden>
+    <button class="viewer__close" type="button" aria-label="Закрыть">×</button>
+    <figure class="viewer__frame">
+      <img id="viewer-img" src="" alt="" draggable="false"/>
+      <figcaption id="viewer-cap"></figcaption>
+    </figure>
+  </div>
+
   <div class="rule">
     <span>© ТОО «Мерке-ет комбинаты»</span>
     <span class="rule__links"><a href="index.html">Вариант A</a> · <a href="dark.html">Вариант B</a> · <a href="retro.html">Вариант C</a></span>
@@ -273,6 +298,43 @@ document.querySelectorAll('.burger').forEach(function (btn) {
     });
   });
 });
+
+// Просмотр сертификата: открываем увеличенное превью, файл не отдаём
+(function () {
+  var viewer = document.getElementById('viewer');
+  if (!viewer) { return; }
+  var img = document.getElementById('viewer-img');
+  var cap = document.getElementById('viewer-cap');
+  var last = null;
+
+  function open(btn) {
+    last = btn;
+    img.src = btn.dataset.cert;
+    img.alt = btn.dataset.title;
+    cap.textContent = btn.dataset.title;
+    viewer.hidden = false;
+    document.body.style.overflow = 'hidden';
+    viewer.querySelector('.viewer__close').focus();
+  }
+  function close() {
+    viewer.hidden = true;
+    document.body.style.overflow = '';
+    if (last) { last.focus(); }
+  }
+
+  document.querySelectorAll('.cert__view').forEach(function (btn) {
+    btn.addEventListener('click', function () { open(btn); });
+  });
+  viewer.querySelector('.viewer__close').addEventListener('click', close);
+  viewer.addEventListener('click', function (e) { if (e.target === viewer) { close(); } });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !viewer.hidden) { close(); } });
+
+  // Снимаем очевидные способы сохранить документ
+  document.querySelectorAll('.cert__view img, #viewer-img').forEach(function (el) {
+    el.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+    el.addEventListener('dragstart', function (e) { e.preventDefault(); });
+  });
+})();
 </script>
 
 </body>
