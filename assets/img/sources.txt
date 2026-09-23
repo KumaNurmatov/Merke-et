@@ -14,3 +14,4 @@ jar-lamb.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtB
 jar-veg.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_7dd5b9ed-a344-41f9-a54d-8ed1be37e027.png
 jar-classic.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_5b4cc937-fa5c-453e-b8a4-90aa50284d72.png
 slaughter-hall.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260923_081552_2f17cc20-12d8-4429-989c-f1057dcb4a0a.png
+offal.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260923_090929_86228e27-033d-49e0-9465-da20c12931af.png
