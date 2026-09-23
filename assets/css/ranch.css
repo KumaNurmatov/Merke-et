@@ -118,24 +118,23 @@ h4{
   display:flex;
   align-items:center;
   flex-wrap:wrap;
-  gap:12px;
+  gap:10px;
   padding:6px 8px 22px;
 }
 
-/* Переключатель языка */
+/* Переключатель языка — живёт внутри пилюли навигации */
 .langs{
-  display:flex;
+  display:inline-flex;
   align-items:center;
   gap:2px;
-  margin-left:8px;
-  padding:4px;
-  background:var(--paper2);
-  border-radius:30px;
+  margin-left:6px;
+  padding-left:8px;
+  border-left:1px solid var(--hair);
   flex:0 0 auto;
 }
 .langs a,
 .langs__on{
-  padding:6px 11px;
+  padding:7px 9px;
   border-radius:30px;
   font-size:12.5px;
   font-weight:700;
@@ -172,6 +171,7 @@ h4{
 .burger.is-active span:nth-child(2){ opacity:0; }
 .burger.is-active span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 .brand{
+  padding:5px 0;
   font-size:19px;
   font-weight:800;
   letter-spacing:-.02em;
@@ -184,8 +184,9 @@ h4{
 .brand span{
   font-size:10px;
   font-weight:700;
-  letter-spacing:.16em;
+  letter-spacing:.08em;
   color:var(--soft);
+  white-space:nowrap;
 }
 .pillnav{
   margin-left:auto;
@@ -197,10 +198,10 @@ h4{
   border-radius:40px;
 }
 .pillnav a{
-  padding:9px 14px;
+  padding:9px 11px;
   white-space:nowrap;
   border-radius:40px;
-  font-size:13.5px;
+  font-size:13px;
   font-weight:600;
   text-decoration:none;
   color:var(--soft);
@@ -611,6 +612,10 @@ h4{
 
 /* ── Адаптив ───────────────────────────────────────────────── */
 
+@media (max-width:1240px){
+  .brand span{ display:none; }
+}
+
 @media (max-width:1040px){
   .grid{ grid-template-columns:repeat(2, 1fr); }
   .stats{ grid-template-columns:repeat(3, 1fr); }
@@ -620,7 +625,6 @@ h4{
 
 @media (max-width:860px){
   .burger{ display:flex; }
-  .langs{ margin-left:auto; }
   .pillnav{
     display:none;
     position:absolute;
@@ -635,6 +639,15 @@ h4{
   }
   .pillnav.is-open{ display:flex; }
   .pillnav a{ padding:12px 14px; font-size:16px; }
+  .langs{
+    margin:6px 0 0;
+    padding:10px 4px 0;
+    border-left:0;
+    border-top:1px solid var(--hair);
+    align-self:stretch;
+  }
+  .langs a,
+  .langs__on{ padding:8px 12px; font-size:14px; }
   .duo,
   .promo{ grid-template-columns:1fr; }
   .promo__txt{ padding:clamp(24px, 4vw, 40px); }

@@ -179,11 +179,11 @@ STRINGS = [
 ]
 
 SWITCH = {
-    'en': ('<span class="langs__on">EN</span>\n      <a href="ranch.html">RU</a>\n      <a href="ranch-kk.html">KK</a>',
-           'ranch-en.html'),
-    'kk': ('<span class="langs__on">KK</span>\n      <a href="ranch.html">RU</a>\n      <a href="ranch-en.html">EN</a>',
-           'ranch-kk.html'),
+    'en': '<span class="langs__on">EN</span>\n        <a href="ranch.html">RU</a>\n        <a href="ranch-kk.html">KK</a>',
+    'kk': '<span class="langs__on">KK</span>\n        <a href="ranch.html">RU</a>\n        <a href="ranch-en.html">EN</a>',
 }
+
+RU_SWITCH = '<span class="langs__on">RU</span>\n        <a href="ranch-en.html">EN</a>\n        <a href="ranch-kk.html">KK</a>'
 
 
 def translate(src: str, idx: int) -> str:
@@ -199,17 +199,16 @@ def translate(src: str, idx: int) -> str:
 
 def main() -> int:
     src = SRC.read_text(encoding='utf-8')
-    missing = 0
+    if RU_SWITCH not in src:
+        print('!! переключатель языков в ranch.html изменился — поправьте RU_SWITCH', file=sys.stderr)
+        return 1
     for lang, idx in (('en', 1), ('kk', 2)):
         page = translate(src, idx)
         page = page.replace('<html lang="ru">', f'<html lang="{lang}">')
-        page = page.replace(
-            '<span class="langs__on">RU</span>\n      <a href="ranch-en.html">EN</a>\n      <a href="ranch-kk.html">KK</a>',
-            SWITCH[lang][0])
-        path = SRC.parent / OUT[lang]
-        path.write_text(page, encoding='utf-8')
+        page = page.replace(RU_SWITCH, SWITCH[lang])
+        (SRC.parent / OUT[lang]).write_text(page, encoding='utf-8')
         print(f'{OUT[lang]} собран')
-    return missing
+    return 0
 
 
 if __name__ == '__main__':
