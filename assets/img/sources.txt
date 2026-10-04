@@ -1,17 +1,6 @@
-# файл|URL исходного кадра Higgsfield
-hero-pasture.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132317_f588f961-cb24-44f6-ae9f-ae5234efc0e4.png
-plant-interior.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132317_48ba9163-6c50-4e3c-a9af-78f4c11e7d32.png
-beef-cuts.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132317_df29a91f-5daa-462c-87e1-4c21ff458bb3.png
-sheep-pasture.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132316_9ed3e577-8260-4b05-a002-dfe26916b17e.png
-aerial-complex.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132316_bfd02e33-b0f7-413d-a80e-1cb69342764c.png
-canned-jar.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012248_748d4996-2e81-47ed-ace8-91925933ea40.png
-cold-storage.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012247_ea2a856b-7acb-4057-b97f-8ee7d2f77b8e.png
-shipping.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012247_fd0e0558-2b5f-4620-9ba0-3b8135467abc.png
-cattle.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012247_166c8569-449a-4702-9c01-9cc2a88f5446.png
-ridge-band.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012247_eac62f2f-cb95-400a-b49b-324b65230236.png
-jar-beef.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_54f499cf-f784-4fe8-a913-f7035b0cb117.png
-jar-lamb.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_99064fc2-f338-4836-b8b4-ed86e9db5b44.png
-jar-veg.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_7dd5b9ed-a344-41f9-a54d-8ed1be37e027.png
-jar-classic.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_5b4cc937-fa5c-453e-b8a4-90aa50284d72.png
-slaughter-hall.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260923_081552_2f17cc20-12d8-4429-989c-f1057dcb4a0a.png
-offal.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260923_090929_86228e27-033d-49e0-9465-da20c12931af.png
+# временный список: кандидаты на главный кадр (казахская белоголовая)
+cand1.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_132851_b192a5ca-b2e7-404f-9c31-d5c5b4516ba4.png
+cand2.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_132852_4645b1af-f754-4743-9c0e-4d8d1dee3faf.png
+cand3.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_132851_4fa29a0e-2385-4295-944a-f0ed1727393a.png
+cand4.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_132850_0c0a15bb-0b59-47b3-8661-06c0900154d1.png
+cand5.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_132851_5ec64861-3c65-4960-b100-c8df541ae5fa.png
