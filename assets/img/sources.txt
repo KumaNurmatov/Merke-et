@@ -15,8 +15,6 @@ jar-beef.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtB
 jar-lamb.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_99064fc2-f338-4836-b8b4-ed86e9db5b44.png
 jar-veg.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_7dd5b9ed-a344-41f9-a54d-8ed1be37e027.png
 jar-classic.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_5b4cc937-fa5c-453e-b8a4-90aa50284d72.png
-slaughter-hall.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260923_081552_2f17cc20-12d8-4429-989c-f1057dcb4a0a.png
-offal.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260923_090929_86228e27-033d-49e0-9465-da20c12931af.png
 
 # запасные кадры той же породы, если понадобится заменить главный:
 # портрет быка  — https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_132852_4645b1af-f754-4743-9c0e-4d8d1dee3faf.png
