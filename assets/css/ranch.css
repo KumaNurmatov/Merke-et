@@ -177,13 +177,24 @@ h4{
   letter-spacing:-.02em;
   text-decoration:none;
   display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:3px;
+  align-items:center;
+  gap:11px;
   line-height:1.05;
   white-space:nowrap;
 }
-.brand span{
+.brand__mark{
+  flex:0 0 auto;
+  width:58px;
+  height:auto;
+  display:block;
+}
+.brand__txt{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:3px;
+}
+.brand__sub{
   font-size:9.5px;
   font-weight:700;
   letter-spacing:.09em;
@@ -513,91 +524,28 @@ h4{
 
 .cert__std--halal{ background:var(--lime); color:var(--ink); letter-spacing:.14em; }
 
-/* Превью сертификата — кнопка, открывающая просмотрщик */
-.cert__view{
-  position:relative;
-  display:block;
-  width:100%;
-  padding:0;
-  border:1px solid var(--hair);
-  border-radius:14px;
-  overflow:hidden;
-  background:var(--paper2);
-  cursor:zoom-in;
-}
-.cert__view img{
+/* Превью сертификата. Картинка подаётся фоном, а не <img>: у фона нет
+   «Сохранить изображение», его нельзя перетащить и нельзя открыть в новой
+   вкладке. Плюс водяной знак и уменьшенное разрешение самого файла. */
+.cert__shot{
   width:100%;
   height:240px;
-  object-fit:cover;
-  object-position:top center;
-  -webkit-user-drag:none;
+  border:1px solid var(--hair);
+  border-radius:14px;
+  background-color:var(--paper2);
+  background-size:cover;
+  background-position:top center;
+  background-repeat:no-repeat;
   user-select:none;
-  pointer-events:none;
-}
-.cert__zoom{
-  position:absolute;
-  left:12px;
-  bottom:12px;
-  padding:7px 14px;
-  border-radius:30px;
-  background:rgba(27,42,32,.82);
-  color:var(--paper);
-  font-size:12.5px;
-  font-weight:700;
-}
-.cert__view:hover .cert__zoom{ background:var(--green); }
-
-/* Просмотрщик */
-.viewer[hidden]{ display:none; }
-.viewer{
-  position:fixed;
-  inset:0;
-  z-index:100;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:clamp(12px, 3vw, 40px);
-  background:rgba(12,24,16,.88);
-  overflow:auto;
-}
-.viewer__frame{
-  margin:0;
-  max-width:min(860px, 100%);
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-.viewer__frame img{
-  width:100%;
-  height:auto;
-  border-radius:10px;
+  -webkit-user-select:none;
+  -webkit-touch-callout:none;
   -webkit-user-drag:none;
-  user-select:none;
 }
-.viewer__frame figcaption{
-  color:rgba(247,243,232,.82);
-  font-size:14px;
-  text-align:center;
-}
-.viewer__close{
-  position:fixed;
-  top:clamp(10px, 2vw, 24px);
-  right:clamp(10px, 2vw, 24px);
-  width:46px;
-  height:46px;
-  border:0;
-  border-radius:50%;
-  background:var(--paper);
-  color:var(--ink);
-  font-size:26px;
-  line-height:1;
-  cursor:pointer;
-}
-.viewer__close:hover{ background:#fff; }
 
 /* ── История ───────────────────────────────────────────────── */
 
 .years{ padding-block:clamp(48px, 6vw, 86px); text-align:center; }
+.years__mark{ width:clamp(78px, 9vw, 104px); height:auto; margin:0 auto 18px; display:block; opacity:.9; }
 .years__grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
@@ -632,7 +580,15 @@ h4{
   border-radius:var(--r);
   padding:clamp(30px, 4vw, 52px);
 }
-.brand--foot{ font-size:24px; display:block; margin-bottom:12px; }
+.brand--foot{
+  font-size:24px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px;
+  margin-bottom:12px;
+}
+.brand--foot .brand__mark{ width:92px; border-radius:10px; }
 .end__brand p{ margin:0; max-width:42ch; color:var(--soft); font-size:15px; }
 .end__col a{
   display:block;
@@ -669,7 +625,7 @@ h4{
 
 /* Между 860 и 1240 навигация важнее описания под маркой */
 @media (max-width:1240px){
-  .brand span{ display:none; }
+  .brand__sub{ display:none; }
   .brand{ padding:9px 0; }
   .pillnav a{ padding:9px 10px; font-size:12.5px; }
 }
@@ -684,7 +640,7 @@ h4{
 @media (max-width:860px){
   .burger{ display:flex; }
   /* На мобильном пилюля навигации уезжает в бургер — место под описание есть */
-  .brand span{ display:block; }
+  .brand__sub{ display:block; }
   .brand{ padding:5px 0; }
   .pillnav{
     display:none;
@@ -720,7 +676,8 @@ h4{
 
 @media (max-width:620px){
   body{ font-size:16px; padding:8px; }
-  .brand span{ font-size:9px; letter-spacing:.07em; }
+  .brand__sub{ font-size:9px; letter-spacing:.07em; }
+  .brand__mark{ width:46px; }
   .nav{ gap:12px; padding-bottom:16px; }
   h1{ font-size:clamp(25px, 6.8vw, 56px); }
   h2{ font-size:clamp(22px, 6vw, 40px); }
@@ -753,3 +710,27 @@ h4{
   }
   .chips li:hover{ box-shadow:none; }
 }
+
+/* ── Фирменный знак в блоках ────────────────────────────────── */
+/* На тёмном фоне ставим знак на фирменной плашке — так он читается */
+.band__mark{
+  width:clamp(104px, 11vw, 132px);
+  height:auto;
+  margin:0 auto 20px;
+  display:block;
+  border-radius:10px;
+}
+/* Еле заметный знак фоном у блока «Полный цикл» */
+.cycle{ position:relative; }
+.cycle::before{
+  content:"";
+  position:absolute;
+  top:clamp(18px, 3vw, 40px);
+  right:clamp(18px, 3vw, 44px);
+  width:clamp(120px, 16vw, 210px);
+  aspect-ratio:17280 / 9250;
+  background:url('../img/logo-mark.svg') no-repeat center / contain;
+  opacity:.07;
+  pointer-events:none;
+}
+.cycle > *{ position:relative; z-index:1; }

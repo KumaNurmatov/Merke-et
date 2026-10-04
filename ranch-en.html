@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"/>
+<link rel="icon" href="assets/img/favicon.png" type="image/png"/>
+<link rel="apple-touch-icon" href="assets/img/favicon.png"/>
 <link rel="stylesheet" href="assets/css/ranch.css"/>
 </head>
 <body>
@@ -15,7 +17,10 @@
 <div class="sheet">
 
   <header class="nav">
-    <a class="brand" href="#top">MERKE-ET<span>meat processing complex</span></a>
+    <a class="brand" href="#top">
+      <img class="brand__mark" src="assets/img/logo-mark.svg" alt="" width="58" height="31" loading="eager"/>
+      <span class="brand__txt">MERKE-ET<span class="brand__sub">meat processing complex</span></span>
+    </a>
     <nav class="pillnav" id="nav-d">
       <a href="#about">About</a>
       <a href="#catalog">Catalogue</a>
@@ -173,6 +178,7 @@
   <section class="band" id="export">
     <img src="assets/img/ridge-band.jpg" alt="Alatau foothills"/>
     <div class="band__txt">
+      <img class="band__mark" src="assets/img/logo.svg" alt="" width="132" height="96" loading="lazy"/>
       <h2>From the Alatau foothills —<br/>to world markets</h2>
       <ul class="geo">
         <li>UAE</li><li>Oman</li><li>Qatar</li><li>Kuwait</li>
@@ -186,15 +192,13 @@
   <section class="certs" id="certs">
     <h2>Certificates</h2>
     <p class="certs__lead">
-      The quality and food safety management systems are confirmed by independent certification bodies. Tap a certificate to take a closer look.
+      The quality and food safety management systems are confirmed by independent certification bodies. The details of each document are listed in its card; originals are provided on request.
     </p>
 
     <div class="certs__grid">
       <article class="cert">
-        <button class="cert__view" type="button" data-cert="assets/img/certs/iso-9001.jpg" data-title="ISO 9001:2015 — quality management system">
-          <img src="assets/img/certs/iso-9001.jpg" alt="ISO 9001:2015 certificate" loading="lazy" draggable="false"/>
-          <span class="cert__zoom">Take a closer look</span>
-        </button>
+        <div class="cert__shot" role="img" aria-label="ISO 9001:2015 certificate"
+             style="background-image:url('assets/img/certs/iso-9001.jpg')"></div>
         <span class="cert__std">ISO 9001:2015</span>
         <h3>Quality management system</h3>
         <dl class="cert__meta">
@@ -206,10 +210,8 @@
       </article>
 
       <article class="cert">
-        <button class="cert__view" type="button" data-cert="assets/img/certs/iso-22000.jpg" data-title="ISO 22000:2018 — food safety management">
-          <img src="assets/img/certs/iso-22000.jpg" alt="ISO 22000:2018 certificate" loading="lazy" draggable="false"/>
-          <span class="cert__zoom">Take a closer look</span>
-        </button>
+        <div class="cert__shot" role="img" aria-label="ISO 22000:2018 certificate"
+             style="background-image:url('assets/img/certs/iso-22000.jpg')"></div>
         <span class="cert__std">ISO 22000:2018</span>
         <h3>Food safety management</h3>
         <dl class="cert__meta">
@@ -221,10 +223,8 @@
       </article>
 
       <article class="cert">
-        <button class="cert__view" type="button" data-cert="assets/img/certs/halal.jpg" data-title="Halal certificate ME-06-12-03KZ">
-          <img src="assets/img/certs/halal.jpg" alt="Halal certificate" loading="lazy" draggable="false"/>
-          <span class="cert__zoom">Take a closer look</span>
-        </button>
+        <div class="cert__shot" role="img" aria-label="Halal certificate"
+             style="background-image:url('assets/img/certs/halal.jpg')"></div>
         <span class="cert__std cert__std--halal">HALAL</span>
         <h3>Halal certificate</h3>
         <dl class="cert__meta">
@@ -240,6 +240,7 @@
 
   <!-- История -->
   <section class="years">
+    <img class="years__mark" src="assets/img/logo-mark.svg" alt="" width="104" height="56" loading="lazy"/>
     <h2>40 years of meat tradition</h2>
     <div class="years__grid">
       <article><b>1986</b><p>The plant was founded. The beginning of the combine’s meat tradition.</p></article>
@@ -251,7 +252,10 @@
   <!-- Contacts -->
   <footer class="end" id="contact">
     <div class="end__brand">
-      <span class="brand brand--foot">MERKE-ET</span>
+      <span class="brand brand--foot">
+        <img class="brand__mark" src="assets/img/logo.svg" alt="" width="92" height="67" loading="lazy"/>
+        MERKE-ET
+      </span>
       <p>LLP Merke-Et Kombinaty. We welcome distributors, wholesalers, retail chains and importers.</p>
     </div>
     <div class="end__col">
@@ -270,14 +274,6 @@
       <a class="btn btn--sm" href="https://wa.me/77025992667">WhatsApp</a>
     </div>
   </footer>
-
-  <div class="viewer" id="viewer" hidden>
-    <button class="viewer__close" type="button" aria-label="Close">×</button>
-    <figure class="viewer__frame">
-      <img id="viewer-img" alt="" draggable="false"/>
-      <figcaption id="viewer-cap"></figcaption>
-    </figure>
-  </div>
 
   <div class="rule">
     <span>© LLP Merke-Et Kombinaty</span>
@@ -311,43 +307,6 @@ document.querySelectorAll('.burger').forEach(function (btn) {
     });
   });
 });
-
-// Просмотр сертификата: открываем увеличенное превью, файл не отдаём
-(function () {
-  var viewer = document.getElementById('viewer');
-  if (!viewer) { return; }
-  var img = document.getElementById('viewer-img');
-  var cap = document.getElementById('viewer-cap');
-  var last = null;
-
-  function open(btn) {
-    last = btn;
-    img.src = btn.dataset.cert;
-    img.alt = btn.dataset.title;
-    cap.textContent = btn.dataset.title;
-    viewer.hidden = false;
-    document.body.style.overflow = 'hidden';
-    viewer.querySelector('.viewer__close').focus();
-  }
-  function close() {
-    viewer.hidden = true;
-    document.body.style.overflow = '';
-    if (last) { last.focus(); }
-  }
-
-  document.querySelectorAll('.cert__view').forEach(function (btn) {
-    btn.addEventListener('click', function () { open(btn); });
-  });
-  viewer.querySelector('.viewer__close').addEventListener('click', close);
-  viewer.addEventListener('click', function (e) { if (e.target === viewer) { close(); } });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !viewer.hidden) { close(); } });
-
-  // Снимаем очевидные способы сохранить документ
-  document.querySelectorAll('.cert__view img, #viewer-img').forEach(function (el) {
-    el.addEventListener('contextmenu', function (e) { e.preventDefault(); });
-    el.addEventListener('dragstart', function (e) { e.preventDefault(); });
-  });
-})();
 
 // Блок «Полный цикл»: этапы и цифры проявляются лесенкой при появлении на экране
 (function () {
@@ -399,6 +358,13 @@ document.querySelectorAll('.burger').forEach(function (btn) {
   }, { threshold: 0.25 });
   io.observe(cycle);
 })();
+
+// Certificates: снимаем контекстное меню и перетаскивание. Полностью запретить
+// сохранение в вебе нельзя — защита в водяном знаке и низком разрешении файла.
+document.querySelectorAll('.cert__shot').forEach(function (el) {
+  el.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+  el.addEventListener('dragstart', function (e) { e.preventDefault(); });
+});
 </script>
 
 </body>

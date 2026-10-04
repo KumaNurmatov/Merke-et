@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"/>
+<link rel="icon" href="assets/img/favicon.png" type="image/png"/>
+<link rel="apple-touch-icon" href="assets/img/favicon.png"/>
 <link rel="stylesheet" href="assets/css/ranch.css"/>
 </head>
 <body>
@@ -15,7 +17,10 @@
 <div class="sheet">
 
   <header class="nav">
-    <a class="brand" href="#top">МЕРКЕ-ЕТ<span>мясоперерабатывающий комплекс</span></a>
+    <a class="brand" href="#top">
+      <img class="brand__mark" src="assets/img/logo-mark.svg" alt="" width="58" height="31" loading="eager"/>
+      <span class="brand__txt">МЕРКЕ-ЕТ<span class="brand__sub">мясоперерабатывающий комплекс</span></span>
+    </a>
     <nav class="pillnav" id="nav-d">
       <a href="#about">О комбинате</a>
       <a href="#catalog">Каталог</a>
@@ -175,6 +180,7 @@
   <section class="band" id="export">
     <img src="assets/img/ridge-band.jpg" alt="Предгорья Алатау"/>
     <div class="band__txt">
+      <img class="band__mark" src="assets/img/logo.svg" alt="" width="132" height="96" loading="lazy"/>
       <h2>С предгорий Алатау —<br/>на мировые рынки</h2>
       <ul class="geo">
         <li>ОАЭ</li><li>Оман</li><li>Катар</li><li>Кувейт</li>
@@ -189,15 +195,13 @@
     <h2>Сертификаты</h2>
     <p class="certs__lead">
       Системы менеджмента качества и безопасности пищевой продукции подтверждены
-      независимыми органами сертификации. Нажмите на сертификат, чтобы рассмотреть его.
+      независимыми органами сертификации. Реквизиты каждого документа приведены в карточке, оригиналы предоставляем по запросу.
     </p>
 
     <div class="certs__grid">
       <article class="cert">
-        <button class="cert__view" type="button" data-cert="assets/img/certs/iso-9001.jpg" data-title="ISO 9001:2015 — система менеджмента качества">
-          <img src="assets/img/certs/iso-9001.jpg" alt="Сертификат ISO 9001:2015" loading="lazy" draggable="false"/>
-          <span class="cert__zoom">Рассмотреть</span>
-        </button>
+        <div class="cert__shot" role="img" aria-label="Сертификат ISO 9001:2015"
+             style="background-image:url('assets/img/certs/iso-9001.jpg')"></div>
         <span class="cert__std">ISO 9001:2015</span>
         <h3>Система менеджмента качества</h3>
         <dl class="cert__meta">
@@ -209,10 +213,8 @@
       </article>
 
       <article class="cert">
-        <button class="cert__view" type="button" data-cert="assets/img/certs/iso-22000.jpg" data-title="ISO 22000:2018 — безопасность пищевой продукции">
-          <img src="assets/img/certs/iso-22000.jpg" alt="Сертификат ISO 22000:2018" loading="lazy" draggable="false"/>
-          <span class="cert__zoom">Рассмотреть</span>
-        </button>
+        <div class="cert__shot" role="img" aria-label="Сертификат ISO 22000:2018"
+             style="background-image:url('assets/img/certs/iso-22000.jpg')"></div>
         <span class="cert__std">ISO 22000:2018</span>
         <h3>Безопасность пищевой продукции</h3>
         <dl class="cert__meta">
@@ -224,10 +226,8 @@
       </article>
 
       <article class="cert">
-        <button class="cert__view" type="button" data-cert="assets/img/certs/halal.jpg" data-title="Халяль-сертификат ME-06-12-03KZ">
-          <img src="assets/img/certs/halal.jpg" alt="Халяль-сертификат" loading="lazy" draggable="false"/>
-          <span class="cert__zoom">Рассмотреть</span>
-        </button>
+        <div class="cert__shot" role="img" aria-label="Халяль-сертификат"
+             style="background-image:url('assets/img/certs/halal.jpg')"></div>
         <span class="cert__std cert__std--halal">HALAL</span>
         <h3>Халяль-сертификат</h3>
         <dl class="cert__meta">
@@ -243,6 +243,7 @@
 
   <!-- История -->
   <section class="years">
+    <img class="years__mark" src="assets/img/logo-mark.svg" alt="" width="104" height="56" loading="lazy"/>
     <h2>40 лет мясной традиции</h2>
     <div class="years__grid">
       <article><b>1986</b><p>Предприятие основано. Начало мясной традиции комбината.</p></article>
@@ -254,7 +255,10 @@
   <!-- Контакты -->
   <footer class="end" id="contact">
     <div class="end__brand">
-      <span class="brand brand--foot">МЕРКЕ-ЕТ</span>
+      <span class="brand brand--foot">
+        <img class="brand__mark" src="assets/img/logo.svg" alt="" width="92" height="67" loading="lazy"/>
+        МЕРКЕ-ЕТ
+      </span>
       <p>ТОО «Мерке-ет комбинаты». Приглашаем к сотрудничеству дистрибьюторов, оптовые компании, торговые сети и импортёров.</p>
     </div>
     <div class="end__col">
@@ -273,14 +277,6 @@
       <a class="btn btn--sm" href="https://wa.me/77025992667">WhatsApp</a>
     </div>
   </footer>
-
-  <div class="viewer" id="viewer" hidden>
-    <button class="viewer__close" type="button" aria-label="Закрыть">×</button>
-    <figure class="viewer__frame">
-      <img id="viewer-img" alt="" draggable="false"/>
-      <figcaption id="viewer-cap"></figcaption>
-    </figure>
-  </div>
 
   <div class="rule">
     <span>© ТОО «Мерке-ет комбинаты»</span>
@@ -314,43 +310,6 @@ document.querySelectorAll('.burger').forEach(function (btn) {
     });
   });
 });
-
-// Просмотр сертификата: открываем увеличенное превью, файл не отдаём
-(function () {
-  var viewer = document.getElementById('viewer');
-  if (!viewer) { return; }
-  var img = document.getElementById('viewer-img');
-  var cap = document.getElementById('viewer-cap');
-  var last = null;
-
-  function open(btn) {
-    last = btn;
-    img.src = btn.dataset.cert;
-    img.alt = btn.dataset.title;
-    cap.textContent = btn.dataset.title;
-    viewer.hidden = false;
-    document.body.style.overflow = 'hidden';
-    viewer.querySelector('.viewer__close').focus();
-  }
-  function close() {
-    viewer.hidden = true;
-    document.body.style.overflow = '';
-    if (last) { last.focus(); }
-  }
-
-  document.querySelectorAll('.cert__view').forEach(function (btn) {
-    btn.addEventListener('click', function () { open(btn); });
-  });
-  viewer.querySelector('.viewer__close').addEventListener('click', close);
-  viewer.addEventListener('click', function (e) { if (e.target === viewer) { close(); } });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !viewer.hidden) { close(); } });
-
-  // Снимаем очевидные способы сохранить документ
-  document.querySelectorAll('.cert__view img, #viewer-img').forEach(function (el) {
-    el.addEventListener('contextmenu', function (e) { e.preventDefault(); });
-    el.addEventListener('dragstart', function (e) { e.preventDefault(); });
-  });
-})();
 
 // Блок «Полный цикл»: этапы и цифры проявляются лесенкой при появлении на экране
 (function () {
@@ -402,6 +361,13 @@ document.querySelectorAll('.burger').forEach(function (btn) {
   }, { threshold: 0.25 });
   io.observe(cycle);
 })();
+
+// Сертификаты: снимаем контекстное меню и перетаскивание. Полностью запретить
+// сохранение в вебе нельзя — защита в водяном знаке и низком разрешении файла.
+document.querySelectorAll('.cert__shot').forEach(function (el) {
+  el.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+  el.addEventListener('dragstart', function (e) { e.preventDefault(); });
+});
 </script>
 
 </body>
