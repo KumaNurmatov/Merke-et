@@ -30,6 +30,36 @@ jobs:
             curl -fsSL "$url" -o "assets/img/$name"
           done < assets/img/sources.txt
 
+      - name: Скачать и сжать видео
+        run: |
+          set -euo pipefail
+          [ -s assets/video/sources.txt ] || { echo "видео не заданы"; exit 0; }
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg >/dev/null
+          while IFS='|' read -r name url; do
+            case "$name" in ''|'#'*) continue;; esac
+            echo "→ $name"
+            curl -fsSL "$url" -o /tmp/src.mp4
+            # Ролики на сайте крутятся в петле. Камера за 8 секунд успевает
+            # немного отъехать, поэтому стык «конец → начало» заметен. Склеиваем
+            # бесшовно: выбрасываем первые XF секунд, а хвост растворяем в них.
+            XF=0.45
+            dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 /tmp/src.mp4)
+            main=$(awk -v d="$dur" -v x="$XF" 'BEGIN{printf "%.3f", d-x}')
+            # без звука, 1600px по ширине, moov в начало — чтобы стартовало сразу
+            ffmpeg -nostdin -y -loglevel error -i /tmp/src.mp4 -an \
+              -filter_complex "[0:v]scale='min(1600,iw)':-2,setsar=1,split=3[v0][v1][v2];\
+                [v0]trim=start=$XF:end=$main,setpts=PTS-STARTPTS[body];\
+                [v1]trim=start=$main,setpts=PTS-STARTPTS[tail];\
+                [v2]trim=start=0:end=$XF,setpts=PTS-STARTPTS[head];\
+                [tail][head]blend=all_expr='A*(1-(T/$XF))+B*(T/$XF)'[mix];\
+                [body][mix]concat=n=2:v=1:a=0[out]" -map "[out]" \
+              -c:v libx264 -profile:v high -pix_fmt yuv420p \
+              -crf 26 -preset slow -movflags +faststart \
+              "assets/video/$name"
+            ls -la "assets/video/$name"
+          done < assets/video/sources.txt
+
       - name: Сжать в JPEG
         run: |
           set -euo pipefail

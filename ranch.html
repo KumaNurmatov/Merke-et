@@ -36,7 +36,11 @@
 
   <!-- Первый экран -->
   <section class="lead" id="top">
-    <img src="assets/img/cattle.jpg" alt="Бык казахской белоголовой породы на пастбище у подножия Алатау"/>
+    <video class="lead__vid" autoplay muted loop playsinline poster="assets/img/cattle.jpg">
+      <source src="assets/video/hero-bull.mp4" type="video/mp4"/>
+      <img src="assets/img/cattle.jpg" alt="Бык казахской белоголовой породы на пастбище у подножия Алатау"/>
+    </video>
+    <img class="lead__poster" src="assets/img/cattle.jpg" alt="Бык казахской белоголовой породы на пастбище у подножия Алатау"/>
     <div class="lead__veil"></div>
     <div class="lead__txt">
       <h1>Мясо с предгорий Алатау</h1>
@@ -286,6 +290,8 @@
 </div>
 
 <script>
+document.documentElement.classList.add('has-js');
+
 document.querySelectorAll('img').forEach(function (img) {
   img.addEventListener('error', function () { img.classList.add('is-missing'); });
   if (img.complete && img.naturalWidth === 0) { img.classList.add('is-missing'); }
@@ -344,6 +350,57 @@ document.querySelectorAll('.burger').forEach(function (btn) {
     el.addEventListener('contextmenu', function (e) { e.preventDefault(); });
     el.addEventListener('dragstart', function (e) { e.preventDefault(); });
   });
+})();
+
+// Блок «Полный цикл»: этапы и цифры проявляются лесенкой при появлении на экране
+(function () {
+  var cycle = document.querySelector('.cycle');
+  if (!cycle) { return; }
+
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = cycle.querySelectorAll('.chips li, .stats article');
+  items.forEach(function (el, i) { el.style.setProperty('--i', i); });
+
+  // Цифры докручиваются от нуля, формат («3 000», «3,5») сохраняем
+  var nums = [].slice.call(cycle.querySelectorAll('.stats b')).map(function (el) {
+    var raw = el.textContent.trim();
+    var value = parseFloat(raw.replace(/[^0-9,.]/g, '').replace(',', '.'));
+    return { el: el, raw: raw, value: value, decimals: /[,.]\d/.test(raw) ? 1 : 0 };
+  });
+
+  function countUp() {
+    var dur = 900;
+    var t0 = performance.now();
+    (function step(now) {
+      var k = Math.min(1, (now - t0) / dur);
+      var ease = 1 - Math.pow(1 - k, 3);
+      nums.forEach(function (n) {
+        if (isNaN(n.value)) { return; }
+        n.el.textContent = (n.value * ease).toLocaleString('ru-RU', {
+          minimumFractionDigits: n.decimals,
+          maximumFractionDigits: n.decimals
+        });
+      });
+      if (k < 1) { requestAnimationFrame(step); }
+      else { nums.forEach(function (n) { n.el.textContent = n.raw; }); }
+    })(t0);
+  }
+
+  function reveal() {
+    cycle.classList.add('is-in');
+    if (!calm) { countUp(); }
+  }
+
+  if (calm || !('IntersectionObserver' in window)) { reveal(); return; }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) { return; }
+      io.disconnect();
+      reveal();
+    });
+  }, { threshold: 0.25 });
+  io.observe(cycle);
 })();
 </script>
 

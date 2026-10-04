@@ -1,0 +1,3 @@
+# файл|URL исходного ролика Higgsfield (скачивается и сжимается в workflow)
+# главный экран: бык казахской белоголовой — стоит, пасётся, поднимает голову
+hero-bull.mp4|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_160337_63f5df55-c951-4617-a33b-588bedc74721.mp4
