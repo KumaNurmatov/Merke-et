@@ -1,3 +1,4 @@
 # файл|URL исходного ролика Higgsfield (скачивается и сжимается в workflow)
 cand-a.mp4|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_160337_63f5df55-c951-4617-a33b-588bedc74721.mp4
 cand-b.mp4|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_160337_532b1bc6-d792-4a46-bde0-ab993826f082.mp4
+cand-c.mp4|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_160337_53c29076-0fa8-4f74-a140-d9d097ce9d77.mp4
