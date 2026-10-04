@@ -1,22 +1,9 @@
-# файл|URL исходного кадра Higgsfield
-hero-pasture.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132317_f588f961-cb24-44f6-ae9f-ae5234efc0e4.png
-plant-interior.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132317_48ba9163-6c50-4e3c-a9af-78f4c11e7d32.png
-beef-cuts.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132317_df29a91f-5daa-462c-87e1-4c21ff458bb3.png
-sheep-pasture.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132316_9ed3e577-8260-4b05-a002-dfe26916b17e.png
-aerial-complex.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260914_132316_bfd02e33-b0f7-413d-a80e-1cb69342764c.png
-canned-jar.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012248_748d4996-2e81-47ed-ace8-91925933ea40.png
-cold-storage.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012247_ea2a856b-7acb-4057-b97f-8ee7d2f77b8e.png
-shipping.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012247_fd0e0558-2b5f-4620-9ba0-3b8135467abc.png
-# главный кадр: бык казахской белоголовой породы (красный корпус, белая голова,
-# белые грудь, низ живота, «носки» и кисть хвоста) на предгорьях Алатау
-cattle.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_132851_b192a5ca-b2e7-404f-9c31-d5c5b4516ba4.png
-ridge-band.png|https://d8j0ntlcm91z4.cloudfront.net/user_3GgOb7H5Ya6g4zWZlPpHYFr1Hrs/hf_20260915_012247_eac62f2f-cb95-400a-b49b-324b65230236.png
-jar-beef.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_54f499cf-f784-4fe8-a913-f7035b0cb117.png
-jar-lamb.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_99064fc2-f338-4836-b8b4-ed86e9db5b44.png
-jar-veg.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_7dd5b9ed-a344-41f9-a54d-8ed1be37e027.png
-jar-classic.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20260915_055823_5b4cc937-fa5c-453e-b8a4-90aa50284d72.png
-
-# запасные кадры той же породы, если понадобится заменить главный:
-# портрет быка  — https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_132852_4645b1af-f754-4743-9c0e-4d8d1dee3faf.png
-# пара на лугу  — https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_132851_5ec64861-3c65-4960-b100-c8df541ae5fa.png
-# стадо у хребта — https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_132851_4fa29a0e-2385-4295-944a-f0ed1727393a.png
+# временная ветка: кандидаты улучшенных фото
+p11-beef-flux.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_163657_11cf0c27-6a22-4185-88cd-d6ec1156fb71.png
+p12-beef-gpt.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_163658_b6c7946c-ed89-48f1-967a-b6afee5f279d.png
+p21-lamb-flux.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_163658_2a2315ce-e9aa-4ab6-be5b-ee7d725e590c.png
+p22-lamb-gpt.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_163658_80feca8c-d3a3-4ab8-b122-96504b64c3c3.png
+p31-hall-flux.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_163657_96d2a589-5c61-4774-aa2e-f793de8d088e.png
+p41-offal-flux.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_163659_d805f715-fddb-4c70-b096-1e96ba2f978e.png
+p42-offal-gpt.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_163658_9e987260-55bb-439d-a8f3-4571b981fa58.png
+p51-chiller-flux.png|https://d8j0ntlcm91z4.cloudfront.net/user_37I8H7nz3PPloWiYfS1FZPvtBRw/hf_20261004_163657_d80ba551-f108-4cf6-bd7b-619e62376d87.png
