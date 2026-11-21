@@ -30,6 +30,12 @@ jobs:
         with:
           enablement: true
 
+      - name: Главная = ranch.html (вариант A уезжает в variant-a.html)
+        run: |
+          mv index.html variant-a.html
+          sed -i 's/href="index.html"/href="variant-a.html"/g' *.html
+          cp ranch.html index.html
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
